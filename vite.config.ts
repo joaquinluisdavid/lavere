@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Production builds are served from GitHub Pages at https://joaquinluisdavid.github.io/lavere/
+// GitHub Pages serves the site from /lavere/, while Vercel serves it from /.
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/lavere/' : '/',
+  base: command === 'build' && !process.env.VERCEL ? '/lavere/' : '/',
   plugins: [react()],
 }))
