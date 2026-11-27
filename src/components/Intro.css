@@ -1,0 +1,48 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1.4rem;
+  background: var(--obsidian);
+}
+
+.intro__mark {
+  display: flex;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  letter-spacing: 0.32em;
+  margin-right: -0.32em;
+  line-height: 1;
+}
+
+.intro__mask {
+  display: inline-block;
+  overflow: hidden;
+  padding-top: 0.12em;
+}
+
+.intro__mask > span {
+  display: inline-block;
+}
+
+.intro__accent {
+  color: var(--gold);
+}
+
+.intro__rule {
+  width: min(16rem, 50vw);
+  height: 1px;
+  background: var(--gold);
+  transform-origin: left;
+}
+
+.intro__tag {
+  font-size: 0.66rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ivory-muted);
+}

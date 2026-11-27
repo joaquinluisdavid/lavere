@@ -1,0 +1,138 @@
+.full-menu {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(42rem, 100%);
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--line-dark);
+  color: var(--ivory);
+  background: var(--obsidian);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.full-menu[open] {
+  animation: drawer-in 0.7s var(--ease) both;
+}
+
+.full-menu::backdrop {
+  background: rgb(14 13 12 / 0.72);
+  backdrop-filter: blur(4px);
+  animation: fade-in 0.5s var(--ease) both;
+}
+
+@keyframes drawer-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.full-menu__panel {
+  padding: 0 clamp(1.5rem, 5vw, 3.5rem) 3.5rem;
+}
+
+.full-menu__top {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  background: var(--obsidian);
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.full-menu__close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 2.75rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ivory-muted);
+}
+
+.full-menu__title {
+  margin: 1rem 0 3rem;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(3rem, 8vw, 4.75rem);
+  line-height: 1;
+}
+
+.full-menu__title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.full-menu__section + .full-menu__section {
+  margin-top: 3rem;
+}
+
+.full-menu__section-title {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--gold-soft);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.full-menu__item + .full-menu__item {
+  margin-top: 1.25rem;
+}
+
+.full-menu__line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.full-menu__name {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.full-menu__leader {
+  flex: 1;
+  min-width: 1.5rem;
+  border-bottom: 1px dotted var(--ivory-faint);
+  transform: translateY(-0.3rem);
+}
+
+.full-menu__price {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.full-menu__desc {
+  margin-top: 0.15rem;
+  font-size: 0.86rem;
+  color: var(--ivory-muted);
+}
+
+.full-menu__note {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-dark);
+  font-size: 0.78rem;
+  color: var(--ivory-faint);
+}

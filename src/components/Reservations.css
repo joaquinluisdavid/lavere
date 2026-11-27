@@ -1,0 +1,411 @@
+.reservations {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--section);
+  outline: none;
+}
+
+.reservations__bg {
+  position: absolute !important;
+  inset: 0;
+  z-index: -2;
+}
+
+.reservations__shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to right, rgb(20 19 17 / 0.92) 0%, rgb(20 19 17 / 0.78) 45%, rgb(20 19 17 / 0.6) 100%),
+    linear-gradient(to bottom, var(--obsidian) 0%, transparent 18%, transparent 82%, var(--obsidian) 100%);
+}
+
+.reservations__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.reservations__intro {
+  grid-column: 1 / span 5;
+  position: sticky;
+  top: calc(var(--nav-h) + 3rem);
+}
+
+.reservations__label {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.reservations__intro .line-reveal__mask:nth-child(2) {
+  padding-left: 0.8em;
+}
+
+.reservations__lede {
+  max-width: 28rem;
+  margin-top: 2rem;
+}
+
+.reservations__policies {
+  margin-top: 3rem;
+  max-width: 28rem;
+  border-top: 1px solid var(--line-dark);
+}
+
+.reservations__policy {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--line-dark);
+  font-size: 0.88rem;
+}
+
+.reservations__policy dt {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-top: 0.2rem;
+}
+
+.reservations__policy dd {
+  color: var(--ivory-muted);
+}
+
+.reservations__panel {
+  grid-column: 7 / -1;
+  padding: clamp(1.75rem, 3.5vw, 3.25rem);
+  background: rgb(20 19 17 / 0.9);
+  border: 1px solid var(--line-dark);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  position: relative;
+}
+
+.reservations__panel::before {
+  /* thin gold rule on the top edge, like a foil-stamped card */
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: clamp(1.75rem, 3.5vw, 3.25rem);
+  width: 4rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+.res-form__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.res-form__title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.res-form__required {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ivory-faint);
+}
+
+.res-form__group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 1.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.res-form__group--3 {
+  grid-template-columns: 1.25fr 1fr 1fr;
+}
+
+.res-form__group + .res-form__group {
+  margin-top: 0.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.field.span-2 {
+  grid-column: 1 / -1;
+}
+
+.field__label {
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ivory-muted);
+  transition: color 0.3s;
+}
+
+.field:focus-within .field__label {
+  color: var(--gold);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.65rem 0;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--ivory);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgb(242 237 227 / 0.28);
+  border-radius: 0;
+  outline: none;
+  color-scheme: dark;
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+  line-height: 1.4;
+}
+
+.field select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 1.5rem;
+  background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+  background-position: calc(100% - 10px) 55%, calc(100% - 5px) 55%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.field select option {
+  background: var(--obsidian);
+  color: var(--ivory);
+  font-family: var(--sans);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgb(242 237 227 / 0.3);
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-bottom-color: rgb(242 237 227 / 0.5);
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  border-bottom-color: var(--gold);
+  box-shadow: 0 1px 0 0 var(--gold);
+}
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+  border-bottom-color: var(--error);
+}
+
+.field__meta {
+  min-height: 1.6rem;
+  padding-top: 0.35rem;
+}
+
+.field__error,
+.field__hint {
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.field__error {
+  color: var(--error);
+}
+
+.field__error::before {
+  content: '— ';
+}
+
+.field__hint {
+  color: var(--ivory-faint);
+}
+
+.field__hint--count {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.res-form__group:disabled {
+  opacity: 0.6;
+}
+
+.res-form__submit {
+  margin-top: 1.25rem;
+}
+
+.res-form__disclaimer {
+  margin-top: 1rem;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--ivory-faint);
+}
+
+.spinner {
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.res-success {
+  padding-block: 1rem;
+}
+
+.res-success__mark {
+  display: block;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  position: relative;
+}
+
+.res-success__mark::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 0.55rem;
+  height: 1rem;
+  border-right: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.res-success__title {
+  margin: 1rem 0 1.25rem;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.05;
+  outline: none;
+}
+
+.res-success__title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.res-success strong {
+  font-weight: 500;
+  color: var(--ivory);
+  overflow-wrap: anywhere;
+}
+
+.res-success__ref {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-block: 1.1rem;
+  border-block: 1px solid var(--line-dark);
+}
+
+.res-success__ref dt {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ivory-muted);
+}
+
+.res-success__ref dd {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+
+.res-success .text-link {
+  margin-top: 1.75rem;
+}
+
+.reservations__alt {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line-dark);
+  font-size: 0.82rem;
+  color: var(--ivory-muted);
+}
+
+.reservations__alt a {
+  color: var(--ivory);
+  border-bottom: 1px solid var(--gold-soft);
+  transition: border-color 0.3s;
+}
+
+.reservations__alt a:hover {
+  border-color: var(--gold);
+}
+
+@media (max-width: 1080px) {
+  .reservations__intro {
+    grid-column: 1 / -1;
+    position: static;
+  }
+
+  .reservations__panel {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+  }
+
+  .reservations__policies {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .res-form__group,
+  .res-form__group--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .reservations__policy {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .reservations__panel {
+    margin-inline: calc(var(--gutter) * -0.5);
+  }
+}
