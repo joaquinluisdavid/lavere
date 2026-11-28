@@ -35,7 +35,6 @@ export function Experience() {
       <div className="container">
         <header className="experience__head">
           <Reveal className="experience__label">
-            <span className="section-num">02</span>
             <span className="eyebrow">The Experience</span>
           </Reveal>
           <h2 id="experience-title" className="h2 experience__title">

@@ -11,10 +11,6 @@
   animation: marquee 48s linear infinite;
 }
 
-.marquee:hover .marquee__track {
-  animation-play-state: paused;
-}
-
 .marquee__run {
   display: flex;
   flex-shrink: 0;

@@ -15,17 +15,6 @@
   color: var(--bronze);
 }
 
-.section-num {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.1rem;
-  color: var(--gold);
-}
-
-.story .section-num {
-  color: var(--bronze);
-}
-
 .story__head {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));

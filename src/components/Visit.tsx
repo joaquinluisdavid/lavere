@@ -60,7 +60,6 @@ export function Visit() {
       <div className="container visit__grid">
         <div className="visit__info">
           <Reveal className="visit__label">
-            <span className="section-num">06</span>
             <span className="eyebrow">Visit Us</span>
           </Reveal>
           <h2 id="visit-title" className="h2 visit__title">

@@ -15,7 +15,6 @@ export function Story() {
       <div className="container">
         <header className="story__head">
           <Reveal className="story__label">
-            <span className="section-num">01</span>
             <span className="eyebrow">Our Story</span>
           </Reveal>
           <h2 id="story-title" className="h2 story__title">

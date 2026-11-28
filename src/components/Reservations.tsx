@@ -169,7 +169,6 @@ export function Reservations() {
       <div className="container reservations__grid">
         <div className="reservations__intro">
           <Reveal className="reservations__label">
-            <span className="section-num">05</span>
             <span className="eyebrow">Reservations</span>
           </Reveal>
           <h2 id="reservations-title" className="h2">

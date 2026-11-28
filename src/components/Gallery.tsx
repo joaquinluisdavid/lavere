@@ -69,7 +69,6 @@ export function Gallery() {
       <div className="container">
         <header className="gallery__head">
           <Reveal className="gallery__label">
-            <span className="section-num">04</span>
             <span className="eyebrow">Gallery</span>
           </Reveal>
           <h2 id="gallery-title" className="h2 gallery__title">

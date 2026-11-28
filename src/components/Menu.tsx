@@ -24,7 +24,6 @@ export function Menu() {
       <div className="container">
         <header className="menu__head">
           <Reveal className="menu__label">
-            <span className="section-num">03</span>
             <span className="eyebrow">Signature Menu</span>
           </Reveal>
           <h2 id="menu-title" className="h2 menu__title">
